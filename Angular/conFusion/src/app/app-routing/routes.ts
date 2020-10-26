@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 
 export const routes: Routes= [
     {path:'home',component:HomeComponent},
+    {path:'contactus',component:ContactComponent},
     {path:'menu',component:MenuComponent},
     {path:'',redirectTo:'/home',pathMatch:'full'}
 ];

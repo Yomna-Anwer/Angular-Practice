@@ -12,4 +12,19 @@ export class DishService {
   getDishes():Dish[]{
     return DISHES;
   }
+
+
+  getDish(id:string):Dish{
+    //the filtering of an array will help me to select out only those elements from the array that 
+    //match a particular criteria that will be specified inside the filter here and then among them 
+    //It will return only the first one
+    return DISHES.filter((dish)=>(dish.id === id))[0];
+
+  }
+
+  getFeaturedDish():Dish{
+    return DISHES.filter((dish)=>(dish.featured))[0];
+
+
+  }
 }
