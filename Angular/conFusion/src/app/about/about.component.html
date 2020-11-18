@@ -65,24 +65,21 @@
    <p mat-line> <span>  {{leader.description}}</span> </p>
      </mat-list-item>
      </mat-list>-->
-    
-    <div fxLayout="column" fxLayout.gt-sm="row" *ngFor ="let leader of leaders">
+     <mat-list *ngIf="leaders" >
+      <mat-list-item *ngFor ="let leader of leaders">
+       <img matListAvatar src="{{leader.image}}" alt={{leader.name}}>
+        <h4 matLine>{{leader.name}} {{leader.abbr}}</h4>
+         <p matLine>{{leader.designation}}</p>
+         <p matLine>{{leader.description}}</p>
+         <p fxFlex>
+          
+      </mat-list-item>
+     </mat-list>
+      <div [hidden]="leaders">
+          <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+        </div>
 
-       <div fxFlex="10">
-        <img height="70px" src="{{leader.image}}" alt="Avatar">
-       </div>
-
-       <div fxFlex="90">
-          <mat-list >
-         <p fxFlex>{{leader.name}} {{leader.abbr}}
-          <br>
-          {{leader.designation}}
-          <br>
-          {{leader.description}}
-          </p>
-         </mat-list>
         </div>
 
      </div>
-  </div>
-</div>
+ 

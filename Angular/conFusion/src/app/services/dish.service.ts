@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { promise } from 'protractor';
 import {Dish} from '../shared/dish';
 import {DISHES} from '../shared/dishes';
 
@@ -9,21 +10,30 @@ export class DishService {
 
   constructor() { }
 
-  getDishes():Dish[]{
-    return DISHES;
+  getDishes(): Promise <Dish[]>{
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(DISHES), 2000);
+    });
   }
 
 
-  getDish(id:string):Dish{
+  getDish(id:string): Promise <Dish>{
     //the filtering of an array will help me to select out only those elements from the array that 
     //match a particular criteria that will be specified inside the filter here and then among them 
     //It will return only the first one
-    return DISHES.filter((dish)=>(dish.id === id))[0];
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() =>resolve(DISHES.filter((dish)=>(dish.id === id))[0]),2000);
+    });
 
   }
 
-  getFeaturedDish():Dish{
-    return DISHES.filter((dish)=>(dish.featured))[0];
+  getFeaturedDish():Promise <Dish>{
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() =>resolve(DISHES.filter((dish)=>(dish.featured))[0]),2000);
+    });
 
 
   }
