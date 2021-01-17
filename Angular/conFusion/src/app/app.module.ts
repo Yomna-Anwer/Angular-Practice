@@ -33,6 +33,7 @@ import {LeaderService} from './services/leader.service';
 
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { CertificatesComponent } from './certificates/certificates.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    CertificatesComponent
   ],
   imports: [
     BrowserModule,
